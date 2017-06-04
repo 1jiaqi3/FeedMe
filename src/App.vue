@@ -41,5 +41,14 @@
       flex: 1
       // horizontally text-align
       text-align: center
+      // a, not route-link, because route-link will be a in the browser. But do we have better ways?????????
+      & > a
+        // because we want the whole area is able to be clicked, not only the text
+        // if it is inline, only text reacts to click
+        display: block
+        font-size: 14px
+        color: rgb(77, 85, 93)
+        &.active
+          color: rgb(240, 20, 20)
 
 </style>
