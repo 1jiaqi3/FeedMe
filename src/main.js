@@ -3,11 +3,13 @@
 import Vue from 'vue';
 import App from './App';
 import VueRouter from 'vue-router';
+import VueResource from 'vue-resource';
 import goods from './components/goods/goods';
 import comments from './components/comments/comments';
 import restaurants from './components/restaurants/restaurants';
 
 Vue.use(VueRouter);
+Vue.use(VueResource);
 Vue.config.productionTip = false;
 
 const routes = [

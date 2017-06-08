@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <v-header></v-header>
+    <v-header :seller="seller"></v-header>
     <div class="nav">
       <div class="nav-item">
         <router-link to="/goods">Cuisine</router-link>
@@ -16,10 +16,25 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
   import header from './components/header/header.vue';
 
+  const ERR_OK = 0;
+
   export default {
+    data() {
+      return {
+        seller: {}
+      };
+    },
+    created() {
+      this.$http.get('/v1/seller').then((response) => {
+        response = response.body;
+        if (response.errno === ERR_OK) {
+          this.seller = response.data;
+        }
+      });
+    },
     components: {
       'v-header': header
     }
@@ -27,6 +42,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+  @import "./common/stylus/mixin.styl"
   // there is a postcss plugin in vue-loader, that can take care of our browser compatibility
   .nav
     // flex box
@@ -36,6 +52,8 @@
     height: 40px
     // set line-height same as its container's height, making text vertically centered
     line-height: 40px
+    border-bottom: 1px solid rgba(7, 17, 27, 0.1)
+    //border-1px(rgba(7, 17, 27, 0.1))
     .nav-item
       // make 3 items evenly divide
       flex: 1
