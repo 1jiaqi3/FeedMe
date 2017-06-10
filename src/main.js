@@ -8,6 +8,8 @@ import goods from './components/goods/goods';
 import comments from './components/comments/comments';
 import restaurants from './components/restaurants/restaurants';
 
+import './common/stylus/index.styl';
+
 Vue.use(VueRouter);
 Vue.use(VueResource);
 Vue.config.productionTip = false;
