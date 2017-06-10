@@ -73,6 +73,7 @@
         .supports
           .icon
             display: inline-block
+            vertical-align: top
             width: 12px
             height: 12px
             margin-right: 4px
@@ -90,5 +91,5 @@
               bg-image('special_1')
           .text
             line-height: 12px
-            font-size: 12px
+            font-size: 10px
 </style>
