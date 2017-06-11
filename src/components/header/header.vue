@@ -29,27 +29,32 @@
     <div class="background">
       <img :src="seller.avatar" width="100%" height="100%">
     </div>
-    <div class="detail" v-show="detailShow">
-      <div class="detail-wrapper clearfix">
-        <div class="detail-main">
-          <h1 class="name">{{seller.name}}</h1>
-          <div class="star-wrapper">
-            <ratingstar :size="48" :score="seller.score"></ratingstar>
+    <transition name="fade">
+      <div class="detail" v-show="detailShow">
+        <div class="detail-wrapper clearfix">
+          <div class="detail-main">
+            <h1 class="name">{{seller.name}}</h1>
+            <div class="star-wrapper">
+              <ratingstar :size="48" :score="seller.score"></ratingstar>
+            </div>
+            <flexline :word="'Deal'"></flexline>
+            <ul v-if="seller.supports" class="supports">
+              <li class="support-item" v-for="(item, idx) in seller.supports">
+                <span class="icon" :class="classMap[seller.supports[idx].type]"></span>
+                <span class="text">{{seller.supports[idx].description}}</span>
+              </li>
+            </ul>
+            <flexline :word="'About the restaurant'"></flexline>
+            <div class="about">
+              <p class="content">{{seller.bulletin}}</p>
+            </div>
           </div>
-          <flexline :word="'Deal'"></flexline>
-          <ul v-if="seller.supports" class="supports">
-            <li class="support-item" v-for="(item, idx) in seller.supports">
-              <span class="icon" :class="classMap[seller.supports[idx].type]"></span>
-              <span class="text">{{seller.supports[idx].description}}</span>
-            </li>
-          </ul>
-          <flexline :word="'About the restaurant'"></flexline>
+        </div>
+        <div class="detail-close" @click="closeDetail">
+          <i class="icon-close"></i>
         </div>
       </div>
-      <div class="detail-close">
-        <i class="icon-close"></i>
-      </div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -69,6 +74,9 @@
     methods: {
       showDetail() {
         this.detailShow = true;
+      },
+      closeDetail() {
+        this.detailShow = false;
       }
     },
     created() {
@@ -205,6 +213,12 @@
       height: 100%
       overflow: auto
       background: rgba(7, 17, 27, 0.8)
+      transition: all 0.5s
+      &.fade-transition
+        opacity: 1
+      &.fade-enter, &.fade-leave
+        opacity: 0
+        background: rgba(7, 17, 27, 0)
       // using sticky footer pattern
       .detail-wrapper
         width: 100%
@@ -252,6 +266,13 @@
               .text
                 line-height: 12px
                 font-size: 12px
+          .about
+            width: 80%
+            margin: 0 auto
+            .content
+              padding: 0 12px
+              line-height: 24px
+              font-size: 12px
       .detail-close
         position: relative
         width: 32px
