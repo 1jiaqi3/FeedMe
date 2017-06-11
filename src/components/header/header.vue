@@ -36,6 +36,17 @@
           <div class="star-wrapper">
             <ratingstar :size="48" :score="seller.score"></ratingstar>
           </div>
+          <div class="title">
+            <div class="line"></div>
+            <div class="text">Deals</div>
+            <div class="line"></div>
+          </div>
+          <ul v-if="seller.supports" class="supports">
+            <li class="support-item" v-for="item in seller.supports">
+              <span class="icon" :class="classMap[seller.supports[$index].type]"></span>
+              <span class="text">{{seller.supports[$index].description}}</span>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="detail-close">
@@ -212,6 +223,19 @@
             padding: 2px 0
             // text-align not only can be used for text!
             text-align: center
+          .title
+            display: flex
+            width: 80%
+            margin: 28px auto 24px auto
+            .line
+              flex: 1
+              position: relative
+              top: -6px
+              border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+            .text
+              padding: 0 12px
+              font-weight: 700
+              font-size: 14px
       .detail-close
         position: relative
         width: 32px
