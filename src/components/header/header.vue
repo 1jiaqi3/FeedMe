@@ -36,17 +36,14 @@
           <div class="star-wrapper">
             <ratingstar :size="48" :score="seller.score"></ratingstar>
           </div>
-          <div class="title">
-            <div class="line"></div>
-            <div class="text">Deals</div>
-            <div class="line"></div>
-          </div>
+          <flexline :word="'Deal'"></flexline>
           <ul v-if="seller.supports" class="supports">
             <li class="support-item" v-for="(item, idx) in seller.supports">
               <span class="icon" :class="classMap[seller.supports[idx].type]"></span>
               <span class="text">{{seller.supports[idx].description}}</span>
             </li>
           </ul>
+          <flexline :word="'About the restaurant'"></flexline>
         </div>
       </div>
       <div class="detail-close">
@@ -58,6 +55,7 @@
 
 <script type="text/ecmascript-6">
   import ratingstar from '../../components/ratingstar/ratingstar';
+  import flexline from './flexline';
 
   export default {
     props: {
@@ -77,7 +75,8 @@
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
     },
     components: {
-      ratingstar
+      ratingstar,
+      flexline
     }
   };
 </script>
@@ -223,19 +222,6 @@
             padding: 2px 0
             // text-align not only can be used for text!
             text-align: center
-          .title
-            display: flex
-            width: 80%
-            margin: 28px auto 24px auto
-            .line
-              flex: 1
-              position: relative
-              top: -6px
-              border-bottom: 1px solid rgba(255, 255, 255, 0.2)
-            .text
-              padding: 0 12px
-              font-weight: 700
-              font-size: 14px
           .supports
             width: 80%
             margin: 0 auto
