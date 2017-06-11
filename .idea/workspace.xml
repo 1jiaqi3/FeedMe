@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12c09278-0547-4ea7-9e6a-69ec91de1d3c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ratingstar/star24_half@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ratingstar/star24_half@3x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ratingstar/star24_off@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ratingstar/star24_off@3x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ratingstar/star24_on@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ratingstar/star24_on@3x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ratingstar/star36_half@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ratingstar/star36_half@3x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ratingstar/star36_off@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ratingstar/star36_off@3x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ratingstar/star36_on@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ratingstar/star36_on@3x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ratingstar/star48_half@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ratingstar/star48_half@3x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ratingstar/star48_off@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ratingstar/star48_off@3x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ratingstar/star48_on@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ratingstar/star48_on@3x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ratingstar/ratingstar.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/header/header.vue" afterPath="$PROJECT_DIR$/src/components/header/header.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ratingstar/ratingstar.vue" afterPath="$PROJECT_DIR$/src/components/ratingstar/ratingstar.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -80,31 +62,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="header.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/header/header.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="191" column="19" lean-forward="false" selection-start-line="191" selection-start-column="19" selection-end-line="191" selection-end-column="19" />
+            <state relative-caret-position="313">
+              <caret line="212" column="56" lean-forward="false" selection-start-line="212" selection-start-column="56" selection-end-line="212" selection-end-column="56" />
               <folding>
                 <element signature="n#div#2;n#div#0;n#template#0;n#!!top" expanded="false" />
-                <element signature="e#2101#3989#0" expanded="false" />
-                <element signature="e#2380#3583#0" expanded="false" />
-                <element signature="e#2453#2847#0" expanded="false" />
-                <element signature="e#2502#2714#0" expanded="false" />
-                <element signature="e#2743#2847#0" expanded="false" />
-                <element signature="e#2879#2952#0" expanded="false" />
-                <element signature="e#4018#4743#0" expanded="false" />
-                <element signature="e#4766#4891#0" expanded="false" />
+                <element signature="e#2336#4224#0" expanded="false" />
+                <element signature="e#2615#3818#0" expanded="false" />
+                <element signature="e#2688#3082#0" expanded="false" />
+                <element signature="e#2737#2949#0" expanded="false" />
+                <element signature="e#2978#3082#0" expanded="false" />
+                <element signature="e#3114#3187#0" expanded="false" />
+                <element signature="e#4253#4978#0" expanded="false" />
+                <element signature="e#5001#5126#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ratingstar.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ratingstar.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/ratingstar/ratingstar.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="420">
+              <caret line="28" column="20" lean-forward="true" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -179,8 +161,8 @@
         <option value="$PROJECT_DIR$/src/common/stylus/icon.styl" />
         <option value="$PROJECT_DIR$/src/main.js" />
         <option value="$PROJECT_DIR$/data.json" />
-        <option value="$PROJECT_DIR$/src/components/header/header.vue" />
         <option value="$PROJECT_DIR$/src/components/ratingstar/ratingstar.vue" />
+        <option value="$PROJECT_DIR$/src/components/header/header.vue" />
       </list>
     </option>
   </component>
@@ -598,12 +580,12 @@
       <updated>1496576048577</updated>
       <workItem from="1496576050760" duration="852000" />
       <workItem from="1496577187902" duration="11492000" />
-      <workItem from="1496935144338" duration="19112000" />
+      <workItem from="1496935144338" duration="20946000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31456000" />
+    <option name="totallyTimeSpent" value="33290000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -993,29 +975,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/header/header.vue">
+    <entry file="file://$PROJECT_DIR$/src/components/ratingstar/ratingstar.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="191" column="19" lean-forward="false" selection-start-line="191" selection-start-column="19" selection-end-line="191" selection-end-column="19" />
-          <folding>
-            <element signature="n#div#2;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#2101#3989#0" expanded="false" />
-            <element signature="e#2380#3583#0" expanded="false" />
-            <element signature="e#2453#2847#0" expanded="false" />
-            <element signature="e#2502#2714#0" expanded="false" />
-            <element signature="e#2743#2847#0" expanded="false" />
-            <element signature="e#2879#2952#0" expanded="false" />
-            <element signature="e#4018#4743#0" expanded="false" />
-            <element signature="e#4766#4891#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="420">
+          <caret line="28" column="20" lean-forward="true" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ratingstar/ratingstar.vue">
+    <entry file="file://$PROJECT_DIR$/src/components/header/header.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="313">
+          <caret line="212" column="56" lean-forward="false" selection-start-line="212" selection-start-column="56" selection-end-line="212" selection-end-column="56" />
+          <folding>
+            <element signature="n#div#2;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="e#2336#4224#0" expanded="false" />
+            <element signature="e#2615#3818#0" expanded="false" />
+            <element signature="e#2688#3082#0" expanded="false" />
+            <element signature="e#2737#2949#0" expanded="false" />
+            <element signature="e#2978#3082#0" expanded="false" />
+            <element signature="e#3114#3187#0" expanded="false" />
+            <element signature="e#4253#4978#0" expanded="false" />
+            <element signature="e#5001#5126#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

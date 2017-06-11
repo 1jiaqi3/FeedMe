@@ -33,6 +33,9 @@
       <div class="detail-wrapper clearfix">
         <div class="detail-main">
           <h1 class="name">{{seller.name}}</h1>
+          <div class="star-wrapper">
+            <ratingstar :size="48" :score="seller.score"></ratingstar>
+          </div>
         </div>
       </div>
       <div class="detail-close">
@@ -43,6 +46,8 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import ratingstar from '../../components/ratingstar/ratingstar';
+
   export default {
     props: {
       seller: Object
@@ -59,6 +64,9 @@
     },
     created() {
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
+    },
+    components: {
+      ratingstar
     }
   };
 </script>
@@ -199,6 +207,11 @@
             text-align: center
             font-size: 16px
             font-weight: 700
+          .star-wrapper
+            margin-top: 18px
+            padding: 2px 0
+            // text-align not only can be used for text!
+            text-align: center
       .detail-close
         position: relative
         width: 32px
