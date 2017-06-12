@@ -1,6 +1,15 @@
 <template>
   <div class="goods">
-    <div class="menu-wrapper"></div>
+    <div class="menu-wrapper">
+      <ul>
+        <li v-for="item in goods" class="menu-item">
+          <span class="text">
+            <span v-show="item.type > 0" class="icon" :class="classMap[item.type]"></span>{{item.name}}
+          </span>
+        </li>
+      </ul>
+    </div>
+
     <div class="foods-wrapper"></div>
   </div>
 </template>
@@ -19,6 +28,7 @@
       };
     },
     created() {
+      this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
       this.$http.get('/v1/goods').then((response) => {
         response = response.body;
         if (response.errno === ERR_OK) {
@@ -42,6 +52,11 @@
       flex: 0 0 80px
       width: 80px
       background: #f3f5f7
+      .munu-item
+        display: table
+        height: 54px
+        width: 56px
+        line-height: 14px
     .foods-wrapper
       flex: 1
 </style>
