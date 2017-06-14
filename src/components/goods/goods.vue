@@ -3,7 +3,7 @@
     <div class="menu-wrapper" ref="menuWrapper">
       <ul>
         <li v-for="item in goods" class="menu-item">
-          <span class="text border-1px">
+          <span class="text">
             <span v-show="item.type > 0" class="icon" :class="classMap[item.type]"></span>{{item.name}}
           </span>
         </li>
@@ -60,6 +60,7 @@
         if (response.errno === ERR_OK) {
           this.goods = response.data;
           this.$nextTick(() => {
+            console.log('HERHHERE');
             this._initScroll();
           });
         }
@@ -67,8 +68,12 @@
     },
     methods: {
       _initScroll() {
-        this.menuScroll = new BScroll(this.$refs.menuWrapper, {});
-        this.foodScroll = new BScroll(this.$refs.foodsWrapper, {});
+        this.menuScroll = new BScroll(this.$refs.menuWrapper, {
+          click: true
+        });
+        this.foodScroll = new BScroll(this.$refs.foodsWrapper, {
+          click: true
+        });
       }
     }
   };
@@ -83,6 +88,7 @@
     top: 174px
     botton: 46px
     width: 100%
+    height: 493px
     overflow: hidden
     .menu-wrapper
       flex: 0 0 80px
@@ -152,6 +158,7 @@
             line-height: 10px
             color: rgb(147, 153, 159)
           .desc
+            line-height: 12px
             margin-bottom: 8px
           .extra
             .count
