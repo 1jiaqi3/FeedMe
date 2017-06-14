@@ -2,7 +2,7 @@
   <div class="goods">
     <div class="menu-wrapper" ref="menuWrapper">
       <ul>
-        <li v-for="item in goods" class="menu-item">
+        <li v-for="(item, index) in goods" class="menu-item" :class="{'current':currentIndex===index}">
           <span class="text">
             <span v-show="item.type > 0" class="icon" :class="classMap[item.type]"></span>{{item.name}}
           </span>
@@ -79,7 +79,7 @@
         }
         return 0;
       }
-    }
+    },
     methods: {
       _initScroll() {
         this.menuScroll = new BScroll(this.$refs.menuWrapper, {
@@ -128,6 +128,14 @@
         width: 56px
         padding: 0 12px
         line-height: 14px
+        &.current
+          position: relative
+          z-index: 10
+          margin-top: -1px
+          background: #fff
+          fond-weight: 700
+          .text
+            border-bottom: 0
         .icon
           display: inline-block
           vertical-align: top
