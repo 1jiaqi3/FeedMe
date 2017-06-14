@@ -2,7 +2,8 @@
   <div class="goods">
     <div class="menu-wrapper" ref="menuWrapper">
       <ul>
-        <li v-for="(item, index) in goods" class="menu-item" :class="{'current':currentIndex===index}">
+        <li v-for="(item, index) in goods" class="menu-item" :class="{'current':currentIndex===index}"
+            @click="selectMenu(index, $event)">
           <span class="text">
             <span v-show="item.type > 0" class="icon" :class="classMap[item.type]"></span>{{item.name}}
           </span>
@@ -35,11 +36,13 @@
         </li>
       </ul>
     </div>
+    <cart></cart>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import BScroll from 'better-scroll';
+  import cart from '../../components/shoppingcart/cart';
 
   const ERR_OK = 0;
   export default {
@@ -73,7 +76,7 @@
         for (let i = 0; i < this.listHeight.length; i++) {
           let h1 = this.listHeight[i];
           let h2 = this.listHeight[i + 1];
-          if (!h2 || this.scrollY > h1 && this.scrollY < h2) {
+          if (!h2 || this.scrollY >= h1 && this.scrollY < h2) {
             return i;
           }
         }
@@ -81,6 +84,14 @@
       }
     },
     methods: {
+      selectMenu(index, event) {
+        if (!event._constructed) {
+          return;
+        }
+        let foodList = this.$refs.foodList;
+        let el = foodList[index];
+        this.foodScroll.scrollToElement(el, 300);
+      },
       _initScroll() {
         this.menuScroll = new BScroll(this.$refs.menuWrapper, {
           click: true
@@ -102,6 +113,9 @@
           height += item.clientHeight;
           this.listHeight.push(height);
         }
+      },
+      components: {
+        cart
       }
     }
   };
