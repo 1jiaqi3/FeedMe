@@ -113,10 +113,10 @@
           height += item.clientHeight;
           this.listHeight.push(height);
         }
-      },
-      components: {
-        cart
       }
+    },
+    components: {
+      cart
     }
   };
 </script>

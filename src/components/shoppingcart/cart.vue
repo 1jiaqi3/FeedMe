@@ -20,5 +20,12 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  
+  .cart
+    position: fixed
+    left: 0
+    bottom: 0
+    z-index: 50
+    width: 100%
+    height: 48px
+    background: #000
 </style>
