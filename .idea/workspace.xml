@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12c09278-0547-4ea7-9e6a-69ec91de1d3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.vue" afterPath="$PROJECT_DIR$/src/App.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/goods/goods.vue" afterPath="$PROJECT_DIR$/src/components/goods/goods.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/shoppingcart/cart.vue" afterPath="$PROJECT_DIR$/src/components/shoppingcart/cart.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -54,11 +52,13 @@
       <file leaf-file-name="cart.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/shoppingcart/cart.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="86" column="26" lean-forward="false" selection-start-line="86" selection-start-column="26" selection-end-line="86" selection-end-column="26" />
+            <state relative-caret-position="321">
+              <caret line="101" column="29" lean-forward="false" selection-start-line="101" selection-start-column="29" selection-end-line="101" selection-end-column="29" />
               <folding>
-                <marker date="1497543613000" expanded="true" signature="899:2060" ph="{...}" />
-                <marker date="1497543613000" expanded="true" signature="1881:2060" ph="{...}" />
+                <marker date="1497544072000" expanded="true" signature="776:2440" ph="{...}" />
+                <marker date="1497544072000" expanded="true" signature="886:2440" ph="{...}" />
+                <marker date="1497544072000" expanded="true" signature="2191:2440" ph="{...}" />
+                <marker date="1497544072000" expanded="true" signature="2251:2440" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -637,12 +637,12 @@
       <workItem from="1496576050760" duration="852000" />
       <workItem from="1496577187902" duration="11492000" />
       <workItem from="1496935144338" duration="22856000" />
-      <workItem from="1497277332323" duration="18046000" />
+      <workItem from="1497277332323" duration="18480000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55427000" />
+    <option name="totallyTimeSpent" value="55861000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1068,11 +1068,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/shoppingcart/cart.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="86" column="26" lean-forward="false" selection-start-line="86" selection-start-column="26" selection-end-line="86" selection-end-column="26" />
+        <state relative-caret-position="321">
+          <caret line="101" column="29" lean-forward="false" selection-start-line="101" selection-start-column="29" selection-end-line="101" selection-end-column="29" />
           <folding>
-            <marker date="1497543613000" expanded="true" signature="899:2060" ph="{...}" />
-            <marker date="1497543613000" expanded="true" signature="1881:2060" ph="{...}" />
+            <marker date="1497544072000" expanded="true" signature="776:2440" ph="{...}" />
+            <marker date="1497544072000" expanded="true" signature="886:2440" ph="{...}" />
+            <marker date="1497544072000" expanded="true" signature="2191:2440" ph="{...}" />
+            <marker date="1497544072000" expanded="true" signature="2251:2440" ph="{...}" />
           </folding>
         </state>
       </provider>

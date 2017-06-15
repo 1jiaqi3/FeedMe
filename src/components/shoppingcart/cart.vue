@@ -10,7 +10,11 @@
         <div class="price">$0</div>
         <div class="desc">delivery ${{deliveryPrice}}</div>
       </div>
-      <div class="content-right"></div>
+      <div class="content-right">
+        <div class="pay">
+          ${{minPrice}}起送
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -88,5 +92,12 @@
       .content-right
         flex: 0 0 105px
         width: 105px
-
+        .pay
+          height: 48px
+          line-height: 48px
+          text-align: center
+          font-size: 12px
+          color: rgba(255, 255, 255, 0.4)
+          font-weight: 700
+          background: #2b333b
 </style>
