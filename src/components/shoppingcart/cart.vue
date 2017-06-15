@@ -7,8 +7,8 @@
             <i class="icon-shopping_cart"></i>
           </div>
         </div>
-        <div class="price"></div>
-        <div class="desc"></div>
+        <div class="price">$0</div>
+        <div class="desc">delivery ${{deliveryPrice}}</div>
       </div>
       <div class="content-right"></div>
     </div>
@@ -16,7 +16,18 @@
 </template>
 
 <script type="text/ecmascript-6">
-  export default {};
+  export default {
+    props: {
+      deliveryPrice: {
+        type: Number,
+        default: 0
+      },
+      minPrice: {
+        type: Number,
+        default: 0
+      }
+    }
+  };
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
@@ -65,8 +76,15 @@
           border-right: 1px solid rgba(255, 255, 255, 0.1)
           font-size: 16px
           font-weight: 700
+          color: rgba(255, 255, 255, 0.4)
         .desc
           display: inline-block
+          vertical-align: top
+          margin: 12px 0 0 12px
+          line-height: 24px
+          color: rgba(255, 255, 255, 0.4)
+          font-size: 12px
+          font-weight: 500
       .content-right
         flex: 0 0 105px
         width: 105px

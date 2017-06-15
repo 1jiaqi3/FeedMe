@@ -12,7 +12,7 @@
         <router-link to="/rests">Restaurants</router-link>
       </div>
     </div>
-    <router-view></router-view>
+    <router-view :seller="seller"></router-view>
   </div>
 </template>
 
