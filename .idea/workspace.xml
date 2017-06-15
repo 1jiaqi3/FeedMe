@@ -52,14 +52,9 @@
       <file leaf-file-name="cart.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/shoppingcart/cart.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="101" column="29" lean-forward="false" selection-start-line="101" selection-start-column="29" selection-end-line="101" selection-end-column="29" />
-              <folding>
-                <marker date="1497544072000" expanded="true" signature="776:2440" ph="{...}" />
-                <marker date="1497544072000" expanded="true" signature="886:2440" ph="{...}" />
-                <marker date="1497544072000" expanded="true" signature="2191:2440" ph="{...}" />
-                <marker date="1497544072000" expanded="true" signature="2251:2440" ph="{...}" />
-              </folding>
+            <state relative-caret-position="345">
+              <caret line="36" column="18" lean-forward="false" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -637,12 +632,12 @@
       <workItem from="1496576050760" duration="852000" />
       <workItem from="1496577187902" duration="11492000" />
       <workItem from="1496935144338" duration="22856000" />
-      <workItem from="1497277332323" duration="18480000" />
+      <workItem from="1497277332323" duration="20254000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55861000" />
+    <option name="totallyTimeSpent" value="57635000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1068,14 +1063,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/shoppingcart/cart.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="101" column="29" lean-forward="false" selection-start-line="101" selection-start-column="29" selection-end-line="101" selection-end-column="29" />
-          <folding>
-            <marker date="1497544072000" expanded="true" signature="776:2440" ph="{...}" />
-            <marker date="1497544072000" expanded="true" signature="886:2440" ph="{...}" />
-            <marker date="1497544072000" expanded="true" signature="2191:2440" ph="{...}" />
-            <marker date="1497544072000" expanded="true" signature="2251:2440" ph="{...}" />
-          </folding>
+        <state relative-caret-position="345">
+          <caret line="36" column="18" lean-forward="false" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>

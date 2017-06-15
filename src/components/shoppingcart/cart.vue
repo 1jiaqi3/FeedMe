@@ -3,16 +3,17 @@
     <div class="content">
       <div class="content-left">
         <div class="logo-wrapper">
-          <div class="logo">
-            <i class="icon-shopping_cart"></i>
+          <div class="logo" :class="{'highlight': totalCount > 0}">
+            <i class="icon-shopping_cart" :class="{'highlight': totalCount > 0}"></i>
           </div>
+          <div class="num" v-show="totalCount > 0">{{totalCount}}</div>
         </div>
-        <div class="price">$0</div>
+        <div class="price" :class="{'highlight': totalPrice > 0}">${{totalPrice}}</div>
         <div class="desc">delivery ${{deliveryPrice}}</div>
       </div>
       <div class="content-right">
-        <div class="pay">
-          ${{minPrice}}起送
+        <div class="pay" :class="payClass">
+          {{payDesc}}
         </div>
       </div>
     </div>
@@ -29,6 +30,44 @@
       minPrice: {
         type: Number,
         default: 0
+      },
+      selectedFood: {
+        type: Array,
+        default() {
+          return [];
+        }
+      }
+    },
+    computed: {
+      totalPrice() {
+        let total = 0;
+        this.selectedFood.forEach((food) => {
+          total += food.price * food.count;
+        });
+        return total;
+      },
+      totalCount() {
+        let count = 0;
+        this.selectedFood.forEach((food) => {
+          count += food.count;
+        });
+        return count;
+      },
+      payDesc() {
+        if (this.totalPrice === 0) {
+          return '$' + this.minPrice + '起送';
+        } else if (this.totalPrice < this.minPrice) {
+          return '$' + (this.minPrice - this.totalPrice) + 'to go';
+        } else {
+          return 'Checkout!';
+        }
+      },
+      payClass() {
+        if (this.totalPrice < this.minPrice) {
+          return 'lack';
+        } else {
+          return 'enough';
+        }
       }
     }
   };
@@ -66,10 +105,29 @@
             border-radius: 50%
             background: #2b343c
             text-align: center
+            &.highlight
+              background: rgb(0, 160, 220)
             .icon-shopping_cart
               line-height: 44px
               font-size: 24px
               color: #80858a
+              &.highlight
+                color: #fff
+          .num
+            position: absolute
+            top: 0
+            right: 0
+            // has to specify the width and height, because of it being absolute
+            width: 24px
+            height: 16px
+            line-height: 16px
+            text-align: center
+            border-radius: 16px
+            font-size: 9px
+            font-weight: 700
+            color: #fff
+            background: rgb(240, 20, 20)
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4)
         .price
           display: inline-block
           vertical-align: top
@@ -81,6 +139,8 @@
           font-size: 16px
           font-weight: 700
           color: rgba(255, 255, 255, 0.4)
+          &.highlight
+            color: #fff
         .desc
           display: inline-block
           vertical-align: top
@@ -100,4 +160,9 @@
           color: rgba(255, 255, 255, 0.4)
           font-weight: 700
           background: #2b333b
+          &.lack
+            background: #2b333b
+          &.enough
+            background: #00b43c
+            color: #fff
 </style>
