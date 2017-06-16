@@ -1,8 +1,10 @@
 <template>
   <div class="cartcontrol">
-    <div class="cart-minus" v-show="food.count > 0">
-      <span class="icon-remove_circle_outline"></span>
-    </div>
+    <transition name="move">
+      <div class="cart-minus" v-show="food.count > 0" @click="decreaseCart">
+        <span class="icon-remove_circle_outline inner"></span>
+      </div>
+    </transition>
     <div class="cart-count" v-show="food.count > 0">{{food.count}}</div>
     <div class="cart-plus icon-add_circle" @click="addCart"></div>
   </div>
@@ -27,6 +29,14 @@
         } else {
           this.food.count++;
         }
+      },
+      decreaseCart(event) {
+        if (!event._constructed) {
+          return;
+        }
+        if (this.food.count) {
+          this.food.count--;
+        }
       }
     }
   };
@@ -35,13 +45,26 @@
 <style lang="stylus" rel="stylesheet/stylus">
   .cartcontrol
     font-size: 0
-    .cart-minus, .cart-plus
+    .cart-minus
       display: inline-block
       // increasing the touching area, for better user experience, without changing style
       padding: 6px
-      line-height: 24px
-      font-size: 24px
-      color: rgb(0, 160, 220)
+      opacity: 1
+      transform: translate3d(0, 0, 0)
+      .inner
+        display: inline-block
+        line-height: 24px
+        font-size: 24px
+        color: rgb(0, 160, 220)
+        transition: all 0.4s linear
+        tranform: rotate(0)
+      &.move-enter-active, &.move-leave-active
+        transition: all 0.4s linear
+      &.move-enter, &.move-leave-active
+        opacity: 0
+        transform: translate3d(24px, 0, 0)
+        .inner
+          transform: rotate(180deg)
     .cart-count
       display: inline-block
       vertical-align: top
@@ -51,4 +74,10 @@
       text-align: center
       font-size: 10px
       color: rgb(147, 153, 159)
+    .cart-plus
+      display: inline-block
+      padding: 6px
+      line-height: 24px
+      font-size: 24px
+      color: rgb(0, 160, 220)
 </style>
