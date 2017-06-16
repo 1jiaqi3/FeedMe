@@ -39,7 +39,7 @@
         </li>
       </ul>
     </div>
-    <cart :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></cart>
+    <cart :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice" :selectFoods="selectFoods"></cart>
   </div>
 </template>
 
@@ -85,6 +85,17 @@
           }
         }
         return 0;
+      },
+      selectFoods() {
+        let foods = [];
+        this.goods.forEach((good) => {
+          good.foods.forEach((food) => {
+            if (food.count > 0) {
+              foods.push(food);
+            }
+          });
+        });
+        return foods;
       }
     },
     methods: {

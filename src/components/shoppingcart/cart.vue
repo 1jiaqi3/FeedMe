@@ -31,7 +31,7 @@
         type: Number,
         default: 0
       },
-      selectedFood: {
+      selectFoods: {
         type: Array,
         default() {
           return [];
@@ -41,14 +41,14 @@
     computed: {
       totalPrice() {
         let total = 0;
-        this.selectedFood.forEach((food) => {
+        this.selectFoods.forEach((food) => {
           total += food.price * food.count;
         });
         return total;
       },
       totalCount() {
         let count = 0;
-        this.selectedFood.forEach((food) => {
+        this.selectFoods.forEach((food) => {
           count += food.count;
         });
         return count;
