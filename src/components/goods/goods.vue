@@ -190,6 +190,7 @@
         color: rgb(147, 153, 159)
         background: #f3f5f7
       .food-item
+        position: relative
         display: flex
         margin: 18px
         padding-bottom: 18px
@@ -201,7 +202,6 @@
           flex: 0 0 57px
           margin-right: 10px
         .content
-          position: relative
           flex: 1
           .name
             margin: 2px 0 8px 0
@@ -234,6 +234,6 @@
           .cartcontrol-wrapper
             position: absolute
             right: 0
-            bottom: 12px
+            bottom: 0
 
 </style>

@@ -9,25 +9,46 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import Vue from 'vue';
+
   export default {
     props: {
       food: {
         type: Object
+      }
+    },
+    methods: {
+      addCart(event) {
+        if (!event._constructed) {
+          return;
+        }
+        if (!this.food.count) {
+          Vue.set(this.food, 'count', 1);
+        } else {
+          this.food.count++;
+        }
       }
     }
   };
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  .cart-control
+  .cartcontrol
     font-size: 0
-    .cart-minus, cart-plus
+    .cart-minus, .cart-plus
       display: inline-block
       // increasing the touching area, for better user experience, without changing style
       padding: 6px
       line-height: 24px
       font-size: 24px
-      color: aqua
+      color: rgb(0, 160, 220)
     .cart-count
       display: inline-block
+      vertical-align: top
+      width: 12px
+      padding-top: 6px
+      line-height: 24px
+      text-align: center
+      font-size: 10px
+      color: rgb(147, 153, 159)
 </style>
