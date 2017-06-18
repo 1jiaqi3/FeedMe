@@ -8,7 +8,20 @@
           <div class="ranking">Better than {{seller.rankRate}}% restaurants nearby</div>
         </div>
         <div class="overview-right">
-          
+          <div class="score-wrapper">
+            <span class="title">Service</span>
+            <ratingstar :size="24" :score="seller.serviceScore"></ratingstar>
+            <span class="score">{{seller.serviceScore}}</span>
+          </div>
+          <div class="score-wrapper">
+            <span class="title">Food</span>
+            <ratingstar :size="24" :score="seller.foodScore" class="star"></ratingstar>
+            <span class="score">{{seller.foodScore}}</span>
+          </div>
+          <div class="delivery-wrapper">
+            <span class="title">Delivery</span>
+            <span class="delivery">{{seller.deliveryTime}}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -16,11 +29,16 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import ratingstar from '../../components/ratingstar/ratingstar';
+
   export default {
     props: {
       seller: {
         type: Object
       }
+    },
+    components: {
+      ratingstar
     }
   };
 </script>
@@ -59,6 +77,34 @@
           color: rgb(147, 153, 159)
       .overview-right
         flex: 1
-        padding-left: 24px
-
+        padding: 6px 0 6px 24px
+        .score-wrapper
+          margin-bottom: 8px
+          font-size: 0
+          .title
+            display: inline-block
+            line-height: 18px
+            vertical-align: top
+            font-size: 12px
+            color: rgb(7, 17, 27)
+          .star
+            display: inline-block
+            margin: 0 12px
+            vertical-align: top
+          .score
+            display: inline-block
+            line-height: 18px
+            vertical-align: top
+            font-size: 12px
+            color: rgb(255, 153, 0)
+        .delivery-wrapper
+          font-size: 0
+          .title
+            line-height: 18px
+            font-size: 12px
+            color: rgb(7, 17, 27)
+          .delivery
+            margin-left: 12px
+            font-size: 12px
+            color: rgb(147, 153, 159)
 </style>
