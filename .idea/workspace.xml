@@ -98,11 +98,12 @@
       <file leaf-file-name="food.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/food/food.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-425">
-              <caret line="69" column="16" lean-forward="true" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
+            <state relative-caret-position="384">
+              <caret line="295" column="39" lean-forward="false" selection-start-line="295" selection-start-column="39" selection-end-line="295" selection-end-column="39" />
               <folding>
-                <element signature="e#2438#2474#0" expanded="true" />
-                <element signature="e#4256#4701#0" expanded="false" />
+                <element signature="e#2496#2532#0" expanded="true" />
+                <element signature="e#4859#5304#0" expanded="false" />
+                <element signature="e#7290#7649#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -111,11 +112,9 @@
       <file leaf-file-name="ratingselect.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/ratingselect/ratingselect.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="127" column="27" lean-forward="false" selection-start-line="127" selection-start-column="24" selection-end-line="127" selection-end-column="27" />
-              <folding>
-                <element signature="e#988#1438#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="291">
+              <caret line="126" column="29" lean-forward="true" selection-start-line="126" selection-start-column="29" selection-end-line="126" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -631,12 +630,12 @@
       <workItem from="1496576050760" duration="852000" />
       <workItem from="1496577187902" duration="11492000" />
       <workItem from="1496935144338" duration="22856000" />
-      <workItem from="1497277332323" duration="54930000" />
+      <workItem from="1497277332323" duration="56507000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92311000" />
+    <option name="totallyTimeSpent" value="93888000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1056,21 +1055,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ratingselect/ratingselect.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="127" column="27" lean-forward="false" selection-start-line="127" selection-start-column="24" selection-end-line="127" selection-end-column="27" />
-          <folding>
-            <element signature="e#988#1438#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="291">
+          <caret line="126" column="29" lean-forward="true" selection-start-line="126" selection-start-column="29" selection-end-line="126" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/food/food.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-425">
-          <caret line="69" column="16" lean-forward="true" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
+        <state relative-caret-position="384">
+          <caret line="295" column="39" lean-forward="false" selection-start-line="295" selection-start-column="39" selection-end-line="295" selection-end-column="39" />
           <folding>
-            <element signature="e#2438#2474#0" expanded="true" />
-            <element signature="e#4256#4701#0" expanded="false" />
+            <element signature="e#2496#2532#0" expanded="true" />
+            <element signature="e#4859#5304#0" expanded="false" />
+            <element signature="e#7290#7649#0" expanded="false" />
           </folding>
         </state>
       </provider>
