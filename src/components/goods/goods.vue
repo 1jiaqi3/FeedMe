@@ -64,7 +64,8 @@
       return {
         goods: [],
         listHeight: [],
-        scrollY: 0
+        scrollY: 0,
+        selectedFood: {}
       };
     },
     created() {
@@ -139,6 +140,7 @@
           return;
         }
         this.selectedFood = food;
+        this.$refs.food.show();
       }
     },
     components: {
@@ -258,5 +260,6 @@
             position: absolute
             right: 0
             bottom: 0
+
 
 </style>
