@@ -96,26 +96,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="food.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="food.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/food/food.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="62" column="21" lean-forward="false" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
+            <state relative-caret-position="225">
+              <caret line="38" column="68" lean-forward="false" selection-start-line="38" selection-start-column="68" selection-end-line="38" selection-end-column="68" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#transition#0;n#template#0;n#!!top" expanded="false" />
-                <element signature="e#1559#1595#0" expanded="true" />
-                <element signature="e#3377#3822#0" expanded="false" />
+                <element signature="e#1848#1884#0" expanded="true" />
+                <element signature="e#3666#4111#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ratingselect.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ratingselect.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/ratingselect/ratingselect.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-705">
-              <caret line="5" column="69" lean-forward="false" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
-              <folding />
+            <state relative-caret-position="336">
+              <caret line="127" column="27" lean-forward="false" selection-start-line="127" selection-start-column="24" selection-end-line="127" selection-end-column="27" />
+              <folding>
+                <element signature="e#988#1438#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -631,12 +633,12 @@
       <workItem from="1496576050760" duration="852000" />
       <workItem from="1496577187902" duration="11492000" />
       <workItem from="1496935144338" duration="22856000" />
-      <workItem from="1497277332323" duration="51558000" />
+      <workItem from="1497277332323" duration="53258000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88939000" />
+    <option name="totallyTimeSpent" value="90639000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1054,23 +1056,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/food/food.vue">
+    <entry file="file://$PROJECT_DIR$/src/components/ratingselect/ratingselect.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="62" column="21" lean-forward="false" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
+        <state relative-caret-position="336">
+          <caret line="127" column="27" lean-forward="false" selection-start-line="127" selection-start-column="24" selection-end-line="127" selection-end-column="27" />
           <folding>
-            <element signature="n#div#0;n#div#0;n#transition#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#1559#1595#0" expanded="true" />
-            <element signature="e#3377#3822#0" expanded="false" />
+            <element signature="e#988#1438#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ratingselect/ratingselect.vue">
+    <entry file="file://$PROJECT_DIR$/src/components/food/food.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-705">
-          <caret line="5" column="69" lean-forward="false" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
-          <folding />
+        <state relative-caret-position="225">
+          <caret line="38" column="68" lean-forward="false" selection-start-line="38" selection-start-column="68" selection-end-line="38" selection-end-column="68" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#transition#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="e#1848#1884#0" expanded="true" />
+            <element signature="e#3666#4111#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
