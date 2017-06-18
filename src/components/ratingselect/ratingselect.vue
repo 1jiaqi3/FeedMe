@@ -1,9 +1,9 @@
 <template>
   <div class="ratingselect">
     <div class="rating-type border-1px">
-      <span>{{desc.all}}</span>
-      <span>{{desc.positive}}</span>
-      <span>{{desc.negative}}</span>
+      <span class="block positive" :class="{'active':selectType === 2}">{{desc.all}}<span class="count">49</span></span>
+      <span class="block positive" :class="{'active':selectType === 0}">{{desc.positive}}<span class="count">47</span></span>
+      <span class="block negative" :class="{'active':selectType === 1}">{{desc.negative}}<span class="count">2</span></span>
     </div>
     <div class="switch">
       <span class="icon-check_circle"></span>
@@ -54,4 +54,27 @@
       padding: 18px 0
       margin: 0 18px
       border-1px(rgba(7, 17, 21, 0.1))
+      font-size: 0
+      .block
+        display: inline-block
+        padding: 8px
+        margin-right: 8px
+        line-height: 16px
+        border-radius: 1px
+        font-size: 12px
+        color: rgb(77, 85, 93)
+        &.active
+          color: #fff
+        .count
+          margin-left: 2px
+          font-size: 8px
+        &.positive
+          background: rgba(0, 160, 220, 0.2)
+          &.active
+            background: rgb(0, 160, 220)
+        &.negative
+          background: rgba(77, 85, 93, 0.2)
+          &.active
+            background: rgb(77, 85, 93)
+
 </style>

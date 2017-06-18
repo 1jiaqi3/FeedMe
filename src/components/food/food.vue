@@ -60,7 +60,7 @@
     data() {
       return {
         showFlag: false,
-        selectType: ALL,
+        selectType: 1,
         onlyContent: true,
         desc: {
           all: 'All',

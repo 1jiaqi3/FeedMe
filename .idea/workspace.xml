@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12c09278-0547-4ea7-9e6a-69ec91de1d3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.vue" afterPath="$PROJECT_DIR$/src/App.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/stylus/mixin.styl" afterPath="$PROJECT_DIR$/src/common/stylus/mixin.styl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/food/food.vue" afterPath="$PROJECT_DIR$/src/components/food/food.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/goods/goods.vue" afterPath="$PROJECT_DIR$/src/components/goods/goods.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/header/header.vue" afterPath="$PROJECT_DIR$/src/components/header/header.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/shoppingcart/cart.vue" afterPath="$PROJECT_DIR$/src/components/shoppingcart/cart.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ratingselect/ratingselect.vue" afterPath="$PROJECT_DIR$/src/components/ratingselect/ratingselect.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -104,12 +99,12 @@
       <file leaf-file-name="food.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/food/food.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="214" column="23" lean-forward="false" selection-start-line="214" selection-start-column="23" selection-end-line="214" selection-end-column="23" />
+            <state relative-caret-position="585">
+              <caret line="62" column="21" lean-forward="false" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#transition#0;n#template#0;n#!!top" expanded="false" />
                 <element signature="e#1559#1595#0" expanded="true" />
-                <element signature="e#3379#3824#0" expanded="false" />
+                <element signature="e#3377#3822#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -118,8 +113,8 @@
       <file leaf-file-name="ratingselect.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/ratingselect/ratingselect.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="38" lean-forward="false" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+            <state relative-caret-position="-705">
+              <caret line="5" column="69" lean-forward="false" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -193,8 +188,8 @@
         <option value="$PROJECT_DIR$/src/App.vue" />
         <option value="$PROJECT_DIR$/src/components/header/header.vue" />
         <option value="$PROJECT_DIR$/src/components/goods/goods.vue" />
-        <option value="$PROJECT_DIR$/src/components/food/food.vue" />
         <option value="$PROJECT_DIR$/src/components/ratingselect/ratingselect.vue" />
+        <option value="$PROJECT_DIR$/src/components/food/food.vue" />
       </list>
     </option>
   </component>
@@ -636,12 +631,12 @@
       <workItem from="1496576050760" duration="852000" />
       <workItem from="1496577187902" duration="11492000" />
       <workItem from="1496935144338" duration="22856000" />
-      <workItem from="1497277332323" duration="50438000" />
+      <workItem from="1497277332323" duration="51558000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87819000" />
+    <option name="totallyTimeSpent" value="88939000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1061,20 +1056,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/food/food.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="214" column="23" lean-forward="false" selection-start-line="214" selection-start-column="23" selection-end-line="214" selection-end-column="23" />
+        <state relative-caret-position="585">
+          <caret line="62" column="21" lean-forward="false" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
           <folding>
             <element signature="n#div#0;n#div#0;n#transition#0;n#template#0;n#!!top" expanded="false" />
             <element signature="e#1559#1595#0" expanded="true" />
-            <element signature="e#3379#3824#0" expanded="false" />
+            <element signature="e#3377#3822#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ratingselect/ratingselect.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="38" lean-forward="false" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+        <state relative-caret-position="-705">
+          <caret line="5" column="69" lean-forward="false" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
           <folding />
         </state>
       </provider>
