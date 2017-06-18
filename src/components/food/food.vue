@@ -1,32 +1,39 @@
 <template>
   <transition name="move">
     <div v-show="showFlag" class="food" ref="food">
-      <div class="img-header">
-        <img :src="food.image">
-        <div class="back" @click="hide">
-          <i class="icon-arrow_lift"></i>
+      <div class="food-content">
+        <div class="img-header">
+          <img :src="food.image">
+          <div class="back" @click="hide">
+            <i class="icon-arrow_lift"></i>
+          </div>
         </div>
-      </div>
-      <div class="content">
-        <h1 class="title">{{food.name}}</h1>
-        <div class="detail">
-          <span class="sale-stats">Monthly sold {{food.sellCount}}</span><span class="likes">{{food.rating}}% liked</span>
+        <div class="content">
+          <h1 class="title">{{food.name}}</h1>
+          <div class="detail">
+            <span class="sale-stats">Monthly sold {{food.sellCount}}</span><span class="likes">{{food.rating}}% liked</span>
+          </div>
+          <div class="price">
+            <span class="now">${{food.price}}</span>
+            <span class="old" v-show="food.oldPrice">${{food.oldPrice}}</span>
+          </div>
+          <div class="cartcontrol-wrapper">
+            <cartcontrol :food="food" @add="addFood"></cartcontrol>
+          </div>
+          <transition name="fade">
+            <div class="buy" v-show="!food.count || food.count === 0" @click.stop.prevent="addFirst">Add to Cart</div>
+          </transition>
         </div>
-        <div class="price">
-          <span class="now">${{food.price}}</span>
-          <span class="old" v-show="food.oldPrice">${{food.oldPrice}}</span>
-        </div>
-        <div class="cartcontrol-wrapper">
-          <cartcontrol :food="food"></cartcontrol>
-        </div>
-        <transition name="fade">
-          <div class="buy" v-show="!food.count || food.count === 0" @click.stop.prevent="addFirst">Add to Cart</div>
-        </transition>
       </div>
       <bar v-show="food.info"></bar>
       <div class="desc" v-show="food.info">
         <h1 class="title">About the Cuisine</h1>
         <p class="text">{{food.info}}</p>
+      </div>
+      <bar></bar>
+      <div class="rating">
+        <h1 class="title">Comments</h1>
+        <ratingselect selectType="selectType" :onlyContent="onlyContent" :desc="desc" :ratings="food.ratings"></ratingselect>
       </div>
     </div>
   </transition>
@@ -37,7 +44,12 @@
   import BScroll from 'better-scroll';
   import cartcontrol from '../../components/cartcontrol/cartcontrol';
   import bar from '../../components/bar/bar';
+  import ratingselect from '../../components/ratingselect/ratingselect';
   import Vue from 'vue';
+
+  const POSITIVE = 0;
+  const NEGATIVE = 1;
+  const ALL = 2;
 
   export default {
     props: {
@@ -47,12 +59,21 @@
     },
     data() {
       return {
-        showFlag: false
+        showFlag: false,
+        selectType: ALL,
+        onlyContent: true,
+        desc: {
+          all: 'All',
+          positive: 'Positive',
+          negative: 'Negative'
+        }
       };
     },
     methods: {
       show() {
         this.showFlag = true;
+        this.selectType = ALL;
+        this.onlyContent = true;
         this.$nextTick(() => {
           if (!this.scroll) {
             this.scroll = new BScroll(this.$refs.food, {
@@ -72,16 +93,21 @@
         }
         this.$emit('add', event.target);
         Vue.set(this.food, 'count', 1);
+      },
+      addFood(target) {
+        this.$emit('add', target);
       }
     },
     components: {
       cartcontrol,
-      bar
+      bar,
+      ratingselect
     }
   };
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+  @import "../../common/stylus/mixin.styl"
   .food
     position: fixed
     left: 0
@@ -182,4 +208,13 @@
         padding: 0 8px
         font-size: 12px
         color: rgb(77, 85, 93)
+    .rating
+      padding-top: 18px
+      .title
+        line-height: 14px
+        margin-left: 18px
+        font-size: 14px
+        color: rgb(7, 17, 27)
+        font-weight: 700
+
 </style>

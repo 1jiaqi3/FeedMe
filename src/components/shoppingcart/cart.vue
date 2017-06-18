@@ -18,21 +18,19 @@
           </div>
         </div>
       </div>
-      <!--
       <div class="ball-container">
         <div v-for="ball in balls">
-          <transition name="drop" @before-enter="beforeDrop">
-
+          <transition name="drop" @before-enter="beforeDrop" @enter="dropping" @after-enter="afterDrop">
+            <div class="ball" v-show="ball.show">
+              <div class="inner inner-hook"></div>
+            </div>
           </transition>
         </div>
       </div>
-      -->
       <transition name="fold">
         <div class="cart-list" v-show="listShow">
           <div class="list-header">
-            <h1 class="title">
-              Shopping Cart
-            </h1>
+            <h1 class="title">Shopping Cart</h1>
             <span class="empty" @click="empty">Clear</span>
           </div>
           <div class="list-content" ref="listContent">
@@ -43,7 +41,7 @@
                   <span>${{food.price * food.count}}</span>
                 </div>
                 <div class="cartcontrol-wrapper">
-                  <cartcontrol :food="food"></cartcontrol>
+                  <cartcontrol :food="food" @add="addFood"></cartcontrol>
                 </div>
               </li>
             </ul>
@@ -53,9 +51,7 @@
 
     </div>
     <transition name="fade">
-      <div class="list-mask" v-show="listShow" @click="hideList">
-
-      </div>
+      <div class="list-mask" v-show="listShow" @click="hideList"></div>
     </transition>
   </div>
 
@@ -84,9 +80,24 @@
     },
     data() {
       return {
-        ball: [{
-          show: false
-        }],
+        balls: [
+          {
+            show: false
+          },
+          {
+            show: false
+          },
+          {
+            show: false
+          },
+          {
+            show: false
+          },
+          {
+            show: false
+          }
+        ],
+        dropBalls: [],
         fold: true
       };
     },
@@ -142,6 +153,17 @@
       }
     },
     methods: {
+      drop(el) {
+        for (let i = 0; i < this.balls.length; i++) {
+          let ball = this.balls[i];
+          if (!ball.show) {
+            ball.show = true;
+            ball.el = el;
+            this.dropBalls.push(ball);
+            return;
+          }
+        }
+      },
       toggleList() {
         if (!this.totalCount) {
           return;
@@ -161,6 +183,44 @@
           return;
         }
         window.alert('Need to pay ' + this.totalPrice + ' bucks');
+      },
+      addFood(target) {
+        this.drop(target);
+      },
+      beforeDrop(el) {
+        let count = this.balls.length;
+        while (count--) {
+          let ball = this.balls[count];
+          if (ball.show) {
+            let rect = ball.el.getBoundingClientRect();
+            let x = rect.left - 32;
+            let y = -(window.innerHeight - rect.top - 22);
+            el.style.display = '';
+            el.style.webkitTransform = `translate3d(0,${y}px,0)`;
+            el.style.transform = `translate3d(0,${y}px,0)`;
+            let inner = el.getElementsByClassName('inner-hook')[0];
+            inner.style.webkitTransform = `translate3d(${x}px,0,0)`;
+            inner.style.transform = `translate3d(${x}px,0,0)`;
+          }
+        }
+      },
+      dropping(el, done) {
+        let rf = el.offsetHeight;
+        this.$nextTick(() => {
+          el.style.webkitTransform = 'translate3d(0,0,0)';
+          el.style.transform = 'translate3d(0,0,0)';
+          let inner = el.getElementsByClassName('inner-hook')[0];
+          inner.style.transform = 'translate3d(0,0,0)';
+          inner.style.webkitTransform = 'translate3d(0,0,0)';
+          el.addEventListener('transitionend', done);
+        });
+      },
+      afterDrop(el) {
+        let ball = this.dropBalls.shift();
+        if (ball) {
+          ball.show = false;
+          el.style.display = 'none';
+        }
       }
     },
     components: {
@@ -170,6 +230,8 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+  @import "../../common/stylus/mixin.styl"
+
   .cart
     position: fixed
     left: 0
@@ -261,7 +323,7 @@
           &.enough
             background: #00b43c
             color: #fff
-    /*
+
     .ball-container
       .ball
         position: fixed
@@ -274,8 +336,8 @@
           height: 16px
           border-radius: 50%
           background: rgb(0, 160, 220)
-          transition: all 0.4, linear
-          */
+          transition: all 0.4s linear
+
     .cart-list
       position: absolute
       top: 0
@@ -310,7 +372,7 @@
           position: relative
           padding: 12px 0
           box-sizing: border-box
-          border-bottom: 1px solid rgba(7, 17, 27, 0.1)
+          border-1px(rgba(7, 17, 27, 0.1))
           .name
             line-height: 24px
             font-size: 14px
@@ -327,7 +389,6 @@
             position: absolute
             right: 0
             bottom: 6px
-
   .list-mask
     position: fixed
     top: 0

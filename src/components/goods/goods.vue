@@ -5,7 +5,7 @@
         <ul>
           <li v-for="(item, index) in goods" class="menu-item" :class="{'current':currentIndex===index}"
               @click="selectMenu(index, $event)">
-          <span class="text">
+          <span class="text border-1px">
             <span v-show="item.type > 0" class="icon" :class="classMap[item.type]"></span>{{item.name}}
           </span>
           </li>
@@ -25,14 +25,13 @@
                   <h2 class="name">{{food.name}}</h2>
                   <p class="desc">{{food.description}}</p>
                   <div class="extra">
-                    <span class="count">Monthly sold {{food.sellCount}},</span>
-                    <span>{{food.rating}}% liked</span>
+                    <span class="count">Monthly sold {{food.sellCount}},</span><span>{{food.rating}}% liked</span>
                   </div>
                   <div class="price">
                     <span class="now">${{food.price}}</span><span class="old" v-show="food.oldPrice">${{food.oldPrice}}</span>
                   </div>
                   <div class="cartcontrol-wrapper">
-                    <cartcontrol :food="food"></cartcontrol>
+                    <cartcontrol :food="food" @add="addFood"></cartcontrol>
                   </div>
                 </div>
               </li>
@@ -40,9 +39,9 @@
           </li>
         </ul>
       </div>
-      <cart :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice" :selectFoods="selectFoods"></cart>
+      <cart :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice" :selectFoods="selectFoods" ref="cart"></cart>
     </div>
-    <food :food="selectedFood" ref="food"></food>
+    <food :food="selectedFood" ref="food" @add="addFood"></food>
   </div>
 
 </template>
@@ -68,19 +67,6 @@
         selectedFood: {}
       };
     },
-    created() {
-      this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
-      this.$http.get('/v1/goods').then((response) => {
-        response = response.body;
-        if (response.errno === ERR_OK) {
-          this.goods = response.data;
-          this.$nextTick(() => {
-            this._initScroll();
-            this._calculateHeight();
-          });
-        }
-      });
-    },
     computed: {
       currentIndex() {
         for (let i = 0; i < this.listHeight.length; i++) {
@@ -96,13 +82,26 @@
         let foods = [];
         this.goods.forEach((good) => {
           good.foods.forEach((food) => {
-            if (food.count > 0) {
+            if (food.count) {
               foods.push(food);
             }
           });
         });
         return foods;
       }
+    },
+    created() {
+      this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
+      this.$http.get('/v1/goods').then((response) => {
+        response = response.body;
+        if (response.errno === ERR_OK) {
+          this.goods = response.data;
+          this.$nextTick(() => {
+            this._initScroll();
+            this._calculateHeight();
+          });
+        }
+      });
     },
     methods: {
       selectMenu(index, event) {
@@ -112,6 +111,21 @@
         let foodList = this.$refs.foodList;
         let el = foodList[index];
         this.foodScroll.scrollToElement(el, 300);
+      },
+      selectFood(food, event) {
+        if (!event._constructed) {
+          return;
+        }
+        this.selectedFood = food;
+        this.$refs.food.show();
+      },
+      addFood(target) {
+        this._drop(target);
+      },
+      _drop(target) {
+        this.$nextTick(() => {
+          this.$refs.cart.drop(target);
+        });
       },
       _initScroll() {
         this.menuScroll = new BScroll(this.$refs.menuWrapper, {
@@ -134,13 +148,6 @@
           height += item.clientHeight;
           this.listHeight.push(height);
         }
-      },
-      selectFood(food, event) {
-        if (!event._constructed) {
-          return;
-        }
-        this.selectedFood = food;
-        this.$refs.food.show();
       }
     },
     components: {
@@ -177,9 +184,9 @@
           z-index: 10
           margin-top: -1px
           background: #fff
-          fond-weight: 700
+          font-weight: 700
           .text
-            border-bottom: 0
+            border-none()
         .icon
           display: inline-block
           vertical-align: top
@@ -203,7 +210,7 @@
           width: 56px
           vertical-align: middle
           font-size: 12px
-          border-bottom: 1px solid rgba(7, 17, 27, 0.1)
+          border-1px(rgba(7, 17, 27, 0.1))
     .foods-wrapper
       flex: 1
       .title
@@ -215,13 +222,12 @@
         color: rgb(147, 153, 159)
         background: #f3f5f7
       .food-item
-        position: relative
         display: flex
         margin: 18px
         padding-bottom: 18px
-        border-bottom: 1px solid rgba(7, 17, 27, 0.1)
+        border-1px(rgba(7, 17, 27, 0.1))
         &:last-child
-          border-bottom: 0
+          border-none()
           margin-bottom: 0
         .icon
           flex: 0 0 57px
@@ -255,11 +261,8 @@
               text-decoration: line-through
               font-size: 10px
               color: rgb(147, 153, 159)
-
           .cartcontrol-wrapper
             position: absolute
             right: 0
-            bottom: 0
-
-
+            bottom: 12px
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <v-header :seller="seller"></v-header>
-    <div class="nav">
+    <div class="nav border-1px">
       <div class="nav-item">
         <router-link to="/goods">Cuisine</router-link>
       </div>
@@ -12,7 +12,9 @@
         <router-link to="/rests">Restaurants</router-link>
       </div>
     </div>
-    <router-view :seller="seller"></router-view>
+    <keep-alive>
+      <router-view :seller="seller"></router-view>
+    </keep-alive>
   </div>
 </template>
 
@@ -52,8 +54,7 @@
     height: 40px
     // set line-height same as its container's height, making text vertically centered
     line-height: 40px
-    border-bottom: 1px solid rgba(7, 17, 27, 0.1)
-    //border-1px(rgba(7, 17, 27, 0.1))
+    border-1px(rgba(7, 17, 27, 0.1))
     .nav-item
       // make 3 items evenly divide
       flex: 1
