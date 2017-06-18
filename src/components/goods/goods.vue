@@ -1,52 +1,57 @@
 <template>
-  <div class="goods">
-    <div class="menu-wrapper" ref="menuWrapper">
-      <ul>
-        <li v-for="(item, index) in goods" class="menu-item" :class="{'current':currentIndex===index}"
-            @click="selectMenu(index, $event)">
+  <div>
+    <div class="goods">
+      <div class="menu-wrapper" ref="menuWrapper">
+        <ul>
+          <li v-for="(item, index) in goods" class="menu-item" :class="{'current':currentIndex===index}"
+              @click="selectMenu(index, $event)">
           <span class="text">
             <span v-show="item.type > 0" class="icon" :class="classMap[item.type]"></span>{{item.name}}
           </span>
-        </li>
-      </ul>
-    </div>
+          </li>
+        </ul>
+      </div>
 
-    <div class="foods-wrapper" ref="foodsWrapper">
-      <ul>
-        <li v-for="item in goods" class="food-list" ref="foodList">
-          <h1 class="title">{{item.name}}</h1>
-          <ul>
-            <li v-for="food in item.foods" class="food-item border-1px">
-              <div class="icon">
-                <img width="57" height="57" :src="food.icon">
-              </div>
-              <div class="content">
-                <h2 class="name">{{food.name}}</h2>
-                <p class="desc">{{food.description}}</p>
-                <div class="extra">
-                  <span class="count">Monthly sold {{food.sellCount}},</span>
-                  <span>{{food.rating}}% liked</span>
+      <div class="foods-wrapper" ref="foodsWrapper">
+        <ul>
+          <li v-for="item in goods" class="food-list" ref="foodList">
+            <h1 class="title">{{item.name}}</h1>
+            <ul>
+              <li v-for="food in item.foods" class="food-item border-1px" @click="selectFood(food, $event)">
+                <div class="icon">
+                  <img width="57" height="57" :src="food.icon">
                 </div>
-                <div class="price">
-                  <span class="now">${{food.price}}</span><span class="old" v-show="food.oldPrice">${{food.oldPrice}}</span>
+                <div class="content">
+                  <h2 class="name">{{food.name}}</h2>
+                  <p class="desc">{{food.description}}</p>
+                  <div class="extra">
+                    <span class="count">Monthly sold {{food.sellCount}},</span>
+                    <span>{{food.rating}}% liked</span>
+                  </div>
+                  <div class="price">
+                    <span class="now">${{food.price}}</span><span class="old" v-show="food.oldPrice">${{food.oldPrice}}</span>
+                  </div>
+                  <div class="cartcontrol-wrapper">
+                    <cartcontrol :food="food"></cartcontrol>
+                  </div>
                 </div>
-                <div class="cartcontrol-wrapper">
-                  <cartcontrol :food="food"></cartcontrol>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </li>
-      </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <cart :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice" :selectFoods="selectFoods"></cart>
     </div>
-    <cart :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice" :selectFoods="selectFoods"></cart>
+    <food :food="selectedFood" ref="food"></food>
   </div>
+
 </template>
 
 <script type="text/ecmascript-6">
   import BScroll from 'better-scroll';
   import cart from '../../components/shoppingcart/cart';
   import cartcontrol from '../../components/cartcontrol/cartcontrol';
+  import food from '../../components/food/food';
 
   const ERR_OK = 0;
   export default {
@@ -128,11 +133,18 @@
           height += item.clientHeight;
           this.listHeight.push(height);
         }
+      },
+      selectFood(food, event) {
+        if (!event._constructed) {
+          return;
+        }
+        this.selectedFood = food;
       }
     },
     components: {
       cart,
-      cartcontrol
+      cartcontrol,
+      food
     }
   };
 </script>
