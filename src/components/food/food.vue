@@ -24,32 +24,33 @@
             <div class="buy" v-show="!food.count || food.count === 0" @click.stop.prevent="addFirst">Add to Cart</div>
           </transition>
         </div>
-      </div>
-      <bar v-show="food.info"></bar>
-      <div class="desc" v-show="food.info">
-        <h1 class="title">About the Cuisine</h1>
-        <p class="text">{{food.info}}</p>
-      </div>
-      <bar></bar>
-      <div class="rating">
-        <h1 class="title">Comments</h1>
-        <ratingselect selectType="selectType" :onlyContent="onlyContent" :desc="desc" :ratings="food.ratings"></ratingselect>
-        <div class="rating-wrapper">
-          <ul v-show="food.ratings && food.ratings.length">
-            <li v-for="rating in food.ratings" class="ratings-item">
-              <div class="user">
-                <span class="name">{{ratings.username}}</span>
-                <img class="avatar" width="12" height="12" :src="rating.avatar">
-              </div>
-              <div class="time">{{rating.rateTime}}</div>
-              <p class="text">
-                <span :class="{'icon-thumb_up': rating.rateType === 0,
-                'icon-thumb_down': rating.rateType === 1}"></span>
-                {{rating.text}}
-              </p>
-            </li>
-          </ul>
-          <div class="no-rating" v-show="!food.ratings || !food.ratings.length"></div>
+
+        <bar v-show="food.info"></bar>
+        <div class="desc" v-show="food.info">
+          <h1 class="title">About the Cuisine</h1>
+          <p class="text">{{food.info}}</p>
+        </div>
+        <bar></bar>
+        <div class="rating">
+          <h1 class="title">Comments</h1>
+          <ratingselect @select="selectRating" @toggle="toggleContent" selectType="selectType" :onlyContent="onlyContent" :desc="desc" :ratings="food.ratings"></ratingselect>
+          <div class="rating-wrapper">
+            <ul v-show="food.ratings && food.ratings.length">
+              <li v-for="rating in food.ratings" class="ratings-item">
+                <div class="user">
+                  <span class="name">{{rating.username}}</span>
+                  <img class="avatar" width="12" height="12" :src="rating.avatar">
+                </div>
+                <div class="time">{{rating.rateTime}}</div>
+                <p class="text">
+                  <span :class="{'icon-thumb_up': rating.rateType === 0,
+                  'icon-thumb_down': rating.rateType === 1}"></span>
+                  {{rating.text}}
+                </p>
+              </li>
+            </ul>
+            <div class="no-rating" v-show="!food.ratings || !food.ratings.length"></div>
+          </div>
         </div>
       </div>
     </div>
