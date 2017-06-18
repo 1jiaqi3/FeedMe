@@ -3,6 +3,20 @@
     <div v-show="showFlag" class="food" ref="food">
       <div class="img-header">
         <img :src="food.image">
+        <div class="back" @click="hide">
+          <i class="icon-arrow_lift"></i>
+        </div>
+      </div>
+      <div class="content">
+        <h1 class="title">{{food.name}}</h1>
+        <div class="detail">
+          <span class="sale-stat">Monthly sold {{food.sellCount}}</span>
+          <span class="likes">Liked rate {{food.rating}}</span>
+        </div>
+        <div class="price">
+          <span class="now">${{food.price}}</span>
+          <span class="old" v-show="food.oldPrice">${{food.oldPrice}}</span>
+        </div>
       </div>
     </div>
   </transition>
@@ -24,6 +38,9 @@
     methods: {
       show() {
         this.showFlag = true;
+      },
+      hide() {
+        this.showFlag = false;
       }
     }
   };
@@ -55,4 +72,13 @@
         left: 0
         width: 100%
         height: 100%
+      .back
+        position: absolute
+        top: 10px
+        left: 0
+        .icon-arrow_lift
+          display: block
+          padding: 10px
+          font-size: 20px
+          color: #fff
 </style>
