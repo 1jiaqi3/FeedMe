@@ -1,5 +1,5 @@
 <template>
-  <div class="restaurants">
+  <div class="restaurants" ref="restaurants">
     <div class="seller-content">
       <div class="overview">
         <h1 class="title">{{seller.name}}</h1>
@@ -29,20 +29,45 @@
           </li>
         </ul>
       </div>
+      <bar></bar>
+      <div class="bulletin">
+        <h1 class="title">Anouncement</h1>
+        <div class="content-wrapper border-1px">
+          <p class="content">{{seller.bulletin}}</p>
+        </div>
+        <ul v-if="seller.supports" class="supports">
+          <li class="support-item border-1px" v-for="(item, idx) in seller.supports">
+            <span class="icon" :class="classMap[seller.supports[idx].type]"></span>
+            <span class="text">{{seller.supports[idx].description}}</span>
+          </li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import ratingstar from '../../components/ratingstar/ratingstar';
+  import bar from '../../components/bar/bar';
+  import BScroll from 'better-scroll';
   export default {
     props: {
       seller: {
         type: Object
       }
     },
+    created() {
+      this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
+    },
+    ready() {
+      this.scroll = new BScroll(this.$refs.restaurants, {
+        click: true
+      });
+    },
     components: {
-      ratingstar
+      ratingstar,
+      bar
     }
   };
 </script>
@@ -98,4 +123,47 @@
             color: rgb(7, 17, 27)
             .stress
               font-size: 24px
+    .bulletin
+      padding: 18px 18px 0 18px
+      .title
+        margin-bottom: 18px
+        line-height: 14px
+        color: rgb(7, 17, 27)
+        font-size: 14px
+      .content-wrapper
+        padding: 0 12px 16px 12px
+        border-1px(rgba(7, 17, 27, 0.1))
+        .content
+          line-height: 24px
+          font-size: 12px
+          color: rgb(240, 20, 20)
+      .supports
+        .support-item
+          padding: 16px 12px
+          border-1px(rgba(7, 17, 27, 0.1))
+          font-size: 0
+        .icon
+          display: inline-block
+          vertical-align: middle
+          width: 16px
+          height: 16px
+          margin-right: 6px
+          background-size: 16px 16px
+          background-repeat: no-repeat
+          &.decrease
+            bg-image('decrease_4')
+          &.discount
+            bg-image('discount_4')
+          &.guarantee
+            bg-image('guarantee_4')
+          &.invoice
+            bg-image('invoice_4')
+          &.special
+            bg-image('special_4')
+
+        .text
+          line-height: 10px
+          vertical-align: middle
+          font-size: 10px
+          color: rgb(7, 17, 27)
 </style>
