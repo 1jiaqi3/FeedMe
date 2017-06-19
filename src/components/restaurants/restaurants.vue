@@ -60,10 +60,23 @@
     created() {
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
     },
-    ready() {
-      this.scroll = new BScroll(this.$refs.restaurants, {
-        click: true
-      });
+    watch: {
+      'seller'() {
+        this.$nextTick(() => {
+          this._initScroll();
+        });
+      }
+    },
+    methods: {
+      _initScroll() {
+        if (!this.scroll) {
+          this.scroll = new BScroll(this.$refs.restaurants, {
+            click: true
+          });
+        } else {
+          this.scroll.refresh();
+        }
+      }
     },
     components: {
       ratingstar,
@@ -142,6 +155,8 @@
           padding: 16px 12px
           border-1px(rgba(7, 17, 27, 0.1))
           font-size: 0
+          &:last-child
+            border: none
         .icon
           display: inline-block
           vertical-align: middle
