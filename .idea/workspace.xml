@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12c09278-0547-4ea7-9e6a-69ec91de1d3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/comments/comments.vue" afterPath="$PROJECT_DIR$/src/components/comments/comments.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -62,8 +61,8 @@
       <file leaf-file-name="food.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/food/food.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="146" selection-end-column="6" />
+            <state relative-caret-position="256">
+              <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="124" selection-end-column="7" />
               <folding>
                 <element signature="e#2521#2557#0" expanded="true" />
                 <element signature="e#5081#5526#0" expanded="false" />
@@ -97,11 +96,12 @@
       <file leaf-file-name="comments.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/comments/comments.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="61" column="53" lean-forward="false" selection-start-line="61" selection-start-column="53" selection-end-line="61" selection-end-column="53" />
+            <state relative-caret-position="411">
+              <caret line="229" column="38" lean-forward="false" selection-start-line="229" selection-start-column="38" selection-end-line="229" selection-end-column="38" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
-                <element signature="e#2335#2399#0" expanded="true" />
+                <element signature="e#2360#2424#0" expanded="true" />
+                <element signature="e#4256#5766#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -632,12 +632,12 @@
       <workItem from="1496576050760" duration="852000" />
       <workItem from="1496577187902" duration="11492000" />
       <workItem from="1496935144338" duration="22856000" />
-      <workItem from="1497277332323" duration="64919000" />
+      <workItem from="1497277332323" duration="65862000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102300000" />
+    <option name="totallyTimeSpent" value="103243000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1059,8 +1059,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/food/food.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="146" selection-end-column="6" />
+        <state relative-caret-position="256">
+          <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="124" selection-end-column="7" />
           <folding>
             <element signature="e#2521#2557#0" expanded="true" />
             <element signature="e#5081#5526#0" expanded="false" />
@@ -1072,11 +1072,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/comments/comments.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="61" column="53" lean-forward="false" selection-start-line="61" selection-start-column="53" selection-end-line="61" selection-end-column="53" />
+        <state relative-caret-position="411">
+          <caret line="229" column="38" lean-forward="false" selection-start-line="229" selection-start-column="38" selection-end-line="229" selection-end-column="38" />
           <folding>
             <element signature="n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#2335#2399#0" expanded="true" />
+            <element signature="e#2360#2424#0" expanded="true" />
+            <element signature="e#4256#5766#0" expanded="false" />
           </folding>
         </state>
       </provider>

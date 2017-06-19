@@ -1,5 +1,5 @@
 <template>
-  <div class="comments">
+  <div class="comments" ref="comments">
     <div class="comments-content">
       <div class="overview">
         <div class="overview-left">
@@ -26,12 +26,12 @@
       </div>
       <bar></bar>
       <ratingselect @select="selectRating" @toggle="toggleContent" :selectType="selectType"
-                    :onlyContent="onlyContent" :desc="desc" :ratings="ratings"></ratingselect>
+                    :onlyContent="onlyContent" :ratings="ratings"></ratingselect>
       <div class="rating-wrapper">
         <ul>
           <li class="rating-item" v-for="rating in ratings">
             <div class="avatar">
-              <img :src="rating.avatar">
+              <img :src="rating.avatar" width="28" height="28">
             </div>
             <div class="content">
               <h1 class="name">{{rating.username}}</h1>
@@ -60,6 +60,7 @@
   import bar from '../../components/bar/bar';
   import ratingselect from '../../components/ratingselect/ratingselect';
   import {formatDate} from '../../common/js/date.js';
+  import BScroll from 'better-scroll';
 
   const ALL = 2;
   const ERR_OK = 0;
@@ -81,8 +82,37 @@
         response = response.body;
         if (response.errno === ERR_OK) {
           this.ratings = response.data;
+          this.$nextTick(() => {
+            this.scroll = new BScroll(this.$refs.comments, {
+              click: true
+            });
+          });
         }
       });
+    },
+    methods: {
+      needShow(type, text) {
+        if (this.onlyContent && !text) {
+          return false;
+        }
+        if (this.selectType === ALL) {
+          return true;
+        } else {
+          return type === this.selectType;
+        }
+      },
+      selectRating(type) {
+        this.selectType = type;
+        this.$nextTick(() => {
+          this.scroll.refresh();
+        });
+      },
+      toggleContent() {
+        this.onlyContent = !this.onlyContent;
+        this.$nextTick(() => {
+          this.scroll.refresh();
+        });
+      }
     },
     filters: {
       formatDate(time) {
@@ -99,6 +129,8 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+  @import '../../common/stylus/mixin.styl'
+
   .comments
     position: absolute
     top: 174px
@@ -163,4 +195,37 @@
             margin-left: 12px
             font-size: 12px
             color: rgb(147, 153, 159)
+    .rating-wrapper
+      padding: 0 18px
+      .rating-item
+        display: flex
+        padding: 18px 0
+        border-1px(rgba(7, 17, 27, 0.1))
+        .avatar
+          flex: 0 0 28px
+          width: 28px
+          margin-right: 12px
+          img
+            border-radius: 50%
+        .content
+          position: relative
+          flex: 1
+          .name
+            margin-bottom: 4px
+            line-height: 12px
+            font-size: 10px
+            color: rgb(7, 17, 27)
+          .star-wrapper
+            margin-bottom: 6px
+            font-size: 0
+            .star
+              display: inline-block
+              margin-right: 6px
+              vertical-align: top
+            .delivery
+              display: inline-block
+              vertical-align: top
+              font-size: 10
+              line-height: 12px
+              color: rgb(147, 153, 159)
 </style>
