@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12c09278-0547-4ea7-9e6a-69ec91de1d3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/comments/comments.vue" afterPath="$PROJECT_DIR$/src/components/comments/comments.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.js" afterPath="$PROJECT_DIR$/src/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/restaurants/restaurants.vue" afterPath="$PROJECT_DIR$/src/components/restaurants/restaurants.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -84,17 +83,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="comments.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="comments.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/comments/comments.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="32" column="32" lean-forward="false" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+            <state relative-caret-position="-308">
+              <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
                 <element signature="e#2421#2485#0" expanded="true" />
                 <element signature="e#4317#5827#0" expanded="false" />
                 <element signature="e#6352#6707#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="restaurants.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/restaurants/restaurants.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="201">
+              <caret line="42" column="6" lean-forward="true" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -129,16 +138,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bar.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/bar/bar.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="45" lean-forward="true" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -168,7 +167,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/src/components/restaurants/restaurants.vue" />
         <option value="$PROJECT_DIR$/static/css/reset.css" />
         <option value="$PROJECT_DIR$/build/dev-server.js" />
         <option value="$PROJECT_DIR$/.eslintrc.js" />
@@ -193,6 +191,7 @@
         <option value="$PROJECT_DIR$/src/common/js/date.js" />
         <option value="$PROJECT_DIR$/src/main.js" />
         <option value="$PROJECT_DIR$/src/components/comments/comments.vue" />
+        <option value="$PROJECT_DIR$/src/components/restaurants/restaurants.vue" />
       </list>
     </option>
   </component>
@@ -342,7 +341,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ratingstar" />
+              <option name="myItemId" value="restaurants" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -409,28 +408,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="bar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sellme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sellme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylus" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -634,12 +611,12 @@
       <workItem from="1496576050760" duration="852000" />
       <workItem from="1496577187902" duration="11492000" />
       <workItem from="1496935144338" duration="22856000" />
-      <workItem from="1497277332323" duration="67352000" />
+      <workItem from="1497277332323" duration="67988000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104733000" />
+    <option name="totallyTimeSpent" value="105369000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -792,13 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
           <caret line="53" column="38" lean-forward="false" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/restaurants/restaurants.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1072,14 +1042,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/comments/comments.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="32" column="32" lean-forward="false" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+        <state relative-caret-position="-308">
+          <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
           <folding>
             <element signature="n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="e#2421#2485#0" expanded="true" />
             <element signature="e#4317#5827#0" expanded="false" />
             <element signature="e#6352#6707#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/restaurants/restaurants.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="42" column="6" lean-forward="true" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
