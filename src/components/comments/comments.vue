@@ -29,7 +29,7 @@
                     :onlyContent="onlyContent" :ratings="ratings"></ratingselect>
       <div class="rating-wrapper">
         <ul>
-          <li class="rating-item" v-for="rating in ratings">
+          <li class="rating-item" v-for="rating in ratings" v-show="needShow(rating.rateType, rating.text)">
             <div class="avatar">
               <img :src="rating.avatar" width="28" height="28">
             </div>
@@ -42,7 +42,7 @@
               <p class="text">{{rating.text}}</p>
               <div class="like" v-show="rating.recommend && rating.recommend.length">
                 <span class="icon-thumb_up"></span>
-                <span v-for="item in rating.recommend">{{item}}</span>
+                <span class="item" v-for="item in rating.recommend">{{item}}</span>
               </div>
               <div class="time">
                 {{rating.rateTime | formatDate}}
@@ -228,4 +228,32 @@
               font-size: 10
               line-height: 12px
               color: rgb(147, 153, 159)
+          .text
+            margin-bottom: 8px
+            line-height: 18px
+            color: rgb(7, 17, 27)
+            font-size: 12px
+          .like
+            line-height: 16px
+            font-size: 0
+            .icon-thumb_up, .item
+              display: inline-block
+              margin: 0 8px 14px 0
+              font-size: 9px
+            .icon-thumb_up
+              color: rgb(0, 160, 220)
+            .item
+              padding: 0 6px
+              border: 1px solid rgba(7, 17, 27, 0.1)
+              border-radius: 1px
+              color: rgb(147, 153, 159)
+              background: #fff
+          .time
+            position: absolute
+            top: 0
+            right: 0
+            line-height: 12px
+            font-size: 10px
+            color: rgb(147, 153, 159)
+
 </style>

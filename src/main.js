@@ -32,5 +32,3 @@ new Vue({
   components: {App},
   router
 }).$mount('#app');
-
-router.push('/goods');
