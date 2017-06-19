@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12c09278-0547-4ea7-9e6a-69ec91de1d3c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/restaurants/restaurants.vue" afterPath="$PROJECT_DIR$/src/components/restaurants/restaurants.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -76,7 +77,7 @@
       <file leaf-file-name="ratingstar.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/ratingstar/ratingstar.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
+            <state relative-caret-position="-699">
               <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
               <folding />
             </state>
@@ -86,8 +87,8 @@
       <file leaf-file-name="comments.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/comments/comments.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-308">
-              <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+            <state relative-caret-position="632">
+              <caret line="257" column="0" lean-forward="false" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
                 <element signature="e#2421#2485#0" expanded="true" />
@@ -101,8 +102,8 @@
       <file leaf-file-name="restaurants.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/restaurants/restaurants.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="42" column="6" lean-forward="true" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+            <state relative-caret-position="370">
+              <caret line="82" column="19" lean-forward="false" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -611,12 +612,12 @@
       <workItem from="1496576050760" duration="852000" />
       <workItem from="1496577187902" duration="11492000" />
       <workItem from="1496935144338" duration="22856000" />
-      <workItem from="1497277332323" duration="67988000" />
+      <workItem from="1497277332323" duration="69008000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105369000" />
+    <option name="totallyTimeSpent" value="106389000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1003,14 +1004,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ratingstar/ratingstar.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/dev-server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
@@ -1040,10 +1033,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ratingstar/ratingstar.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-699">
+          <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/comments/comments.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-308">
-          <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+        <state relative-caret-position="632">
+          <caret line="257" column="0" lean-forward="false" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
           <folding>
             <element signature="n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
             <element signature="e#2421#2485#0" expanded="true" />
@@ -1055,8 +1056,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/restaurants/restaurants.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="42" column="6" lean-forward="true" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+        <state relative-caret-position="370">
+          <caret line="82" column="19" lean-forward="false" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
           <folding />
         </state>
       </provider>
