@@ -42,7 +42,17 @@
           </li>
         </ul>
       </div>
-
+      <bar></bar>
+      <div class="img">
+        <h1 class="title">Live Images</h1>
+        <div class="img-wrapper" ref="imgWrapper">
+          <ul class="img-list" ref="imgList">
+            <li class="img-item" v-for="img in seller.pics">
+              <img :src="img" width="120" height="90">
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -60,10 +70,17 @@
     created() {
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
     },
+    mounted() {
+      this.$nextTick(() => {
+        this._initScroll();
+        this._initialImgs();
+      });
+    },
     watch: {
       'seller'() {
         this.$nextTick(() => {
           this._initScroll();
+          this._initialImgs();
         });
       }
     },
@@ -75,6 +92,24 @@
           });
         } else {
           this.scroll.refresh();
+        }
+      },
+      _initialImgs() {
+        if (this.seller.pics) {
+          let imgWidth = 120;
+          let margin = 6;
+          let width = (imgWidth + margin) * this.seller.pics.length - margin;
+          this.$refs.imgList.style.width = width + 'px';
+          this.$nextTick(() => {
+            if (!this.imgScroll) {
+              this.imgScroll = new BScroll(this.$refs.imgWrapper, {
+                scrollX: true,
+                eventPassthrough: 'vertical'
+              });
+            } else {
+              this.imgScroll.refresh();
+            }
+          });
         }
       }
     },
@@ -181,4 +216,24 @@
           vertical-align: middle
           font-size: 10px
           color: rgb(7, 17, 27)
+    .img
+      padding: 18px
+      .title
+        margin-bottom: 12px
+        line-height: 14px
+        color: rgb(7, 17, 27)
+        font-size: 14px
+      .img-wrapper
+        width: 100%
+        overflow: hidden
+        white-space: nowrap
+        .img-list
+          font-size: 0
+          .img-item
+            display: inline-block
+            margin-right: 16px
+            width: 120px
+            height: 90px
+            &:last-child
+              margin: 0
 </style>
