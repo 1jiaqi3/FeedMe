@@ -1,4 +1,4 @@
-# sellme
+# FeedMe
 
 > A Vue.js project
 
